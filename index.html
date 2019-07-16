@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Multiplication Table</title>\
+    <style>
+        body {
+            background-color: rgb(90, 88, 88);
+        }
+    div {
+        display: flex;
+        height: 30px;
+        width: 70%;
+        margin: auto;
+        /* background: #000; */
+        justify-content: space-around;
+    }
+
+    input, button {
+        height: 20px;
+        margin-top: 15px;
+    }
+
+    #dp {
+        /* border: 2px solid black; */
+      margin-top:  80px;
+    }
+    
+    </style>
+</head>
+<body>
+    <div>
+     <h4>Rows</h4> 
+     <input id="rw" type="number">
+     
+     <h4>Columns</h4> 
+     <input id="col" type="number"> 
+
+     <button id="go" type="button">Go</button>
+    </div>
+
+    <div id="dp">
+        
+    </div>
+
+
+
+    <script>
+'use strict'
+go.addEventListener('click', crt);
+
+function crt () {
+    var table;
+    table = "<table border='1' cellspacing='0' cellpadding='3'>";
+    let i;
+    let j;
+    for(i =1; i <= rw.value; i++) {
+        table += '<tr>';
+        for(j =1; j <= col.value; j++) {
+table += '<td style="border-right: 2px solid black">' + j+ ' * ' + i  + ' = ' + j * i + '&nbsp; &nbsp; &nbsp;' + '</td';
+
+}
+table += '</tr>';
+
+    }
+
+    table += '</table>';
+
+    dp.innerHTML = table;
+}
+    
+    
+    
+    </script>
+</body>
+</html>
